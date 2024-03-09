@@ -1,6 +1,7 @@
 import { PasswordSchema } from '@/components/Validator/SignUpSchema';
 import { Button } from '@/components/ui/button';
 import { zodResolver } from '@hookform/resolvers/zod';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { ChangeEvent, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -97,14 +98,14 @@ const SettingPW: React.FC<IProps> = ({ setNext, data }) => {
           <p className='mb-3 mt-3'>프로필 이미지</p>
           <div className='flex justify-center items-center flex-col'>
             {image === '' && (
-              <img
+              <Image
                 className='w-[200px] h-[200px]'
                 src='avatar.png'
                 alt='기본 이미지'
               />
             )}
             {image !== '' && (
-              <img className='w-[200px] h-[200px]' src={image} alt='이미지' />
+              <Image className='w-[200px] h-[200px]' src={image} alt='이미지' />
             )}
 
             <button
